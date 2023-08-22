@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import Button from './Button';
+import Input from './Input/Input';
 
 const Arayuz = () => {
   const [text, setText] = useState("test");
@@ -11,10 +12,12 @@ const Arayuz = () => {
   const [girdi, setGirdi] = useState(null)
   return (
     <div>
-      <input onChange={(e) => setGirdi(e.target.value)}/>
-      <button onClick={() => alert('tıklandı')}>Tıkla</button>
-      <Button onClick={() => alert('tıklandı')} title = "yazdır"></Button>
-      <button onClick={() => setText(girdi)}>Yazdır</button>
+      <div className='inputName' style={{marginBottom:"10px"}}>
+        <Input onChange={(e) => setGirdi(e.target.value)}/>
+      </div>
+      <div className='buttonName'>
+        <Button onClick={() => setText(girdi)} title = "yazdır"></Button>
+      </div>
       <h1>{text}</h1>
     </div>
   )
